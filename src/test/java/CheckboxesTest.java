@@ -28,8 +28,7 @@ public class CheckboxesTest {
         List<WebElement> checkboxes = chrome.findElements(By.cssSelector("[type=checkbox]"));
 
         boolean checkboxStatus = checkboxes.get(0).isSelected();
-        boolean checkboxSelected = false;
-        Assert.assertEquals(checkboxStatus, checkboxSelected);
+        Assert.assertFalse(checkboxStatus);
 
         checkboxes.get(0).click();
         checkboxStatus = checkboxes.get(0).isSelected();
@@ -40,7 +39,7 @@ public class CheckboxesTest {
 
         checkboxes.get(1).click();
         checkboxStatus = checkboxes.get(1).isSelected();
-        Assert.assertEquals(checkboxStatus, checkboxSelected);
+        Assert.assertFalse(checkboxStatus);
     }
 
     @AfterMethod(alwaysRun = true)
